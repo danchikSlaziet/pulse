@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   userChatId = user_data["id"];
 });
 function vibro() {
+  console.log('pulse')
   let detect = new MobileDetect(window.navigator.userAgent);
   if (detect.os() === 'iOS') {
     window.Telegram.WebApp.HapticFeedback.impactOccurred("light");
@@ -45,10 +46,9 @@ function startPulse() {
   let currentIndex = 0;
 
   pulseInterval = setInterval(() => {
-    // if (navigator.vibrate) {
-    //   navigator.vibrate(50);
-    // }
-    vibro();
+    if (navigator.vibrate) {
+      navigator.vibrate(50);
+    }
 
     currentIndex++;
     if (currentIndex >= pulseRhythm.length) {
@@ -61,7 +61,7 @@ function startPulse() {
         startPulse();
       }
     }, nextPulseDelay);
-  }, 50);
+  }, 500); // Увеличиваем интервал до 500 мс
 
   pulseButton.textContent = 'Остановочка пульса';
   isPulseActive = true;
