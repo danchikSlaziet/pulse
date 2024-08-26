@@ -46,9 +46,7 @@ function startPulse() {
   let currentIndex = 0;
 
   pulseInterval = setInterval(() => {
-    if (navigator.vibrate) {
-      navigator.vibrate(50);
-    }
+    vibro()
 
     currentIndex++;
     if (currentIndex >= pulseRhythm.length) {
