@@ -40,13 +40,13 @@ let pulseInterval;
 let isPulseActive = false;
 
 // Определяем ритм пульса в виде массива интервалов между ударами
-const pulseRhythm = [600, 800, 700, 600, 750, 850];
+const pulseRhythm = [800, 700, 750, 650, 750, 700, 680, 720, 670, 750];
 
 function startPulse() {
   let currentIndex = 0;
 
   pulseInterval = setInterval(() => {
-    vibro()
+  vibro();
 
     currentIndex++;
     if (currentIndex >= pulseRhythm.length) {
@@ -59,7 +59,7 @@ function startPulse() {
         startPulse();
       }
     }, nextPulseDelay);
-  }, 500); // Увеличиваем интервал до 500 мс
+  }, 50);
 
   pulseButton.textContent = 'Остановочка пульса';
   isPulseActive = true;
