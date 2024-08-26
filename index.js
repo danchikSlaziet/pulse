@@ -43,24 +43,9 @@ let isPulseActive = false;
 const pulseRhythm = [1000, 950, 1050, 920, 1000, 980, 1020, 960, 1040, 930];
 
 function startPulse() {
-  let currentIndex = 0;
-
   pulseInterval = setInterval(() => {
-  vibro();
-
-    currentIndex++;
-    if (currentIndex >= pulseRhythm.length) {
-      currentIndex = 0;
-    }
-
-    const nextPulseDelay = pulseRhythm[currentIndex];
-    setTimeout(() => {
-      if (isPulseActive) {
-        startPulse();
-      }
-    }, nextPulseDelay);
-  }, 150);
-
+    vibro();
+  }, 500);
   pulseButton.textContent = 'Остановочка пульса';
   isPulseActive = true;
 }
