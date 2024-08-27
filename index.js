@@ -26,7 +26,7 @@ function vibro() {
   }
   else {
     if (navigator.vibrate) {
-      navigator.vibrate(20);
+      navigator.vibrate(10);
     }
     else {
       alert("Ваш браузер/устройство не поддерживает API вибрации.")
