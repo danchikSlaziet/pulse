@@ -26,7 +26,7 @@ function vibro() {
   }
   else {
     if (navigator.vibrate) {
-      navigator.vibrate(10);
+      navigator.vibrate(30);
     }
     else {
       alert("Ваш браузер/устройство не поддерживает API вибрации.")
@@ -51,7 +51,7 @@ const pulseRhythm = [1000, 950, 1050, 920, 1000, 980, 1020, 960, 1040, 930];
 function startPulse() {
   pulseInterval = setInterval(() => {
     vibro();
-  }, 500);
+  }, 800);
   pulseButton.textContent = 'Остановочка пульса';
   isPulseActive = true;
 }
