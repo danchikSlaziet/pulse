@@ -20,20 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 function vibro() {
   console.log('pulse')
-  window.Telegram.WebApp.HapticFeedback.impactOccurred("light");
   let detect = new MobileDetect(window.navigator.userAgent);
-  // if (detect.os() === 'iOS') {
-  //   window.Telegram.WebApp.HapticFeedback.impactOccurred("light");
-  // }
-  // else {
-  //   if ("vibrate" in navigator) {
-  //     // Вибрируем устройство в течение 1000 миллисекунд (1 секунда)
-  //     navigator.vibrate(10);
-  //   } else {
-  //     // Ваш браузер не поддерживает API вибрации
-  //     console.log("Ваш браузер не поддерживает API вибрации.");
-  //   }
-  // }
+  if (detect.os() === 'iOS') {
+    window.Telegram.WebApp.HapticFeedback.impactOccurred("light");
+  }
+  else {
+    navigator.vibrate(20);
+    // if ("vibrate" in navigator) {
+    //   // Вибрируем устройство в течение 1000 миллисекунд (1 секунда)
+    //   navigator.vibrate(10);
+    // } else {
+    //   // Ваш браузер не поддерживает API вибрации
+    //   console.log("Ваш браузер не поддерживает API вибрации.");
+    // }
+  }
 }
 
 const pulseButton = document.getElementById('pulseButton');
