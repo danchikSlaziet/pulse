@@ -25,7 +25,12 @@ function vibro() {
     window.Telegram.WebApp.HapticFeedback.impactOccurred("light");
   }
   else {
-    navigator.vibrate(20);
+    if (navigator.vibrate) {
+      navigator.vibrate(20);
+    }
+    else {
+      alert("Ваш браузер/устройство не поддерживает API вибрации.")
+    }
     // if ("vibrate" in navigator) {
     //   // Вибрируем устройство в течение 1000 миллисекунд (1 секунда)
     //   navigator.vibrate(10);
